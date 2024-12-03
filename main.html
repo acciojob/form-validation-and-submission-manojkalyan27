@@ -1,23 +1,54 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form with Checkbox Submission</title>
+  <style>
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form div {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-	<form action="submit-form.php" method="POST">
-		<div>Name: <input name="name" type="text" required></div>
-		<div>Email: <input name="email"  type="email" required></div>
-		<div>Number: <input name="number" type="number" required></div>
-		<div><input id="check" name="checkbox"type="checkbox">I accept the terms and conditions</div>
-		<button id="submit" type="button" disabled>Submit</button>
-	</form>
-    <script type="text/javascript" src="./script.js">
-</script>
-
+  <form id="user-form" action="submit-form.php" method="POST">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div>
+      <input type="checkbox" id="terms" name="terms">
+      <label for="terms">I accept the terms and conditions</label>
+    </div>
+    <div>
+      <button type="submit" id="submit-btn" disabled>Submit</button>
+    </div>
+  </form>
+  <script src="script.js"></script>
 </body>
-
 </html>
